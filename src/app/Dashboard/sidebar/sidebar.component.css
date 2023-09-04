@@ -1,0 +1,40 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100%;
+  background: #FF7F5C;
+  border-radius: 0px 20px 0px 0px;
+  opacity: 1;
+}
+img {
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Add a transition effect */
+}
+
+/* When hovering over an image, scale it slightly */
+img:hover {
+  transform: scale(1.2);
+}
+.pms {
+  margin-top: 46px;
+  margin-bottom: 130px;
+}
+/* Middle elements with margin between "pms" and "logout" */
+.control-room,
+.dashboard,
+.elements,
+.setting,
+.notifications {
+  margin-top: 20px;
+}
+
+.logout {
+  margin-top: auto;
+  margin-bottom: 60px;
+}

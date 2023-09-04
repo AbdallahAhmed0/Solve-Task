@@ -1,0 +1,33 @@
+header{
+/* Layout Properties */
+top: 0px;
+left: 0px;
+width: 100%;
+height: 70px;
+/* UI Properties */
+background: #b46060;
+opacity: 1;
+}
+.gas-icon{
+/* Layout Properties */
+position: relative; /* or absolute, or fixed */
+top: 15px;
+left: 150px;
+width: 38px;
+height: 33px;
+/* UI Properties */
+background: url('../../../assets/gas-station-svgrepo-com.png');
+opacity: 1;
+}
+.dot
+{
+  /* Layout Properties */
+  position: relative;
+top: 69px;
+left: 193px;
+width: 10px;
+height: 10px;
+/* UI Properties */
+background: #FF7F5C 0% 0% no-repeat padding-box;
+opacity: 1;
+}
