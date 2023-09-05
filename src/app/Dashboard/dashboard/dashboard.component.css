@@ -1,0 +1,17 @@
+.cards{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin: 25px;
+}
+
+.card{
+display: flex;
+justify-content: space-between;
+width: 200px;
+margin: 7% 1%;
+border-radius: 15px;
+border: none;
+
+}
+

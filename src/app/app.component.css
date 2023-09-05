@@ -1,5 +1,4 @@
-.main{
-  width: 1700px;
-  height: 1700px;
+.container-fluid{
   background-color: #F9F5F3;
+  height:200vh;
 }

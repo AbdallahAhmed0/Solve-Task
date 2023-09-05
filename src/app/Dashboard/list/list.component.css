@@ -1,0 +1,46 @@
+.custom-table{
+  width: 65%;
+  border-radius: 30px;
+}
+.gas-icon {
+  /* Layout Properties */
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.gas-icon::before{
+content: "";
+display: block;
+width: 7px; /* Adjust the size as needed */
+height: 7px; /* Adjust the size as needed */
+background-color: #FF7F5C; /* Your desired color */
+border-radius: 50%; /* Makes it a circle */
+margin-top: 32px; /* Adjust the spacing below the image */
+margin-right: -10px;
+}
+img{
+  margin-left: 20px;
+  display: inline-block;
+}
+.text {
+  color: #3D5161;
+  font-size: 17px;
+  font-weight: 600;
+  display: inline-block;
+  white-space: nowrap;
+  margin-left: 15px;
+}
+.word{
+display: block;
+}
+.mid-font{
+  font-size: 13px;
+  color: #3D5161;
+  font-weight: 500;
+}
+.little-font{
+  font-size: 11px;
+  color: #3D5161;
+  font-weight: 400;
+}

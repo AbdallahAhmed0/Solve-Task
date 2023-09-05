@@ -1,8 +1,8 @@
-header {
+.header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between; /* Align items horizontally */
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
@@ -11,19 +11,27 @@ header {
   background: #ffffff;
 }
 
-.gas-icon{
-/* Layout Properties */
-position: relative;
-display: flex;
-flex-direction: row;
-align-items: center;
-left: 150px;
-opacity: 0.8;
+.header-content {
+  display: flex;
+  flex-direction: row;
+}
+.content {
+  display: flex; /* Use flex to align child elements horizontally */
+  align-items: center; /* Center child elements vertically */
 }
 
+.gas-icon {
+  /* Layout Properties */
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  left: 150px;
+  opacity: 0.8;
+}
 
 /* Style the red circle below the image */
-.gas-icon::before {
+.gas-icon::before ,.loading::before {
   content: "";
   display: block;
   width: 7px; /* Adjust the size as needed */
@@ -33,23 +41,80 @@ opacity: 0.8;
   margin-top: 24px; /* Adjust the spacing below the image */
   margin-right: 10px;
 }
-.gas-icon .number{
+
+.number {
   margin: 15px;
   color: #3D5161;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 22px;
   opacity: 0.9;
 }
-.text{
+
+.text {
   color: #3D5161;
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 700;
   display: inline-block;
   white-space: nowrap;
 }
-.loading{
-  display: inline-flex;
+
+.loading {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  left: 200px;
+  opacity: 0.8;
 }
+
 .word {
   display: block;
+}
+.btn-group {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  left:250px;
+}
+
+.btn {
+  background-color: #F9F5F3;
+  color: #3D5161;
+  font-size: 13px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-radius 0.3s;
+}
+
+.btn.active {
+  background-color: #FF7F5C;
+  border-radius: 100%;
+  transform: rotate(-45deg);
+  transition: background-color 0.3s, border-radius 0.3s, transform 0.3s;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.date {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  left: 350px;
+}
+
+.inp-date {
+  border: none;
+  border-bottom: 1px solid #000; /* Add an underline */
+  outline: none; /* Remove the default focus outline */
+  margin-left: 50px;
+}
+
+/* Style the input when it's focused */
+.inp-date:focus {
+  border-bottom: 2px solid #FF7F5C; /* Change the underline color on focus */
 }

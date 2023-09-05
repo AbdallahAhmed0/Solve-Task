@@ -6,17 +6,27 @@ import { Graph1Component } from './Dashboard/graph1/graph1.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './Dashboard/header/header.component';
 import { SidebarComponent } from './Dashboard/sidebar/sidebar.component';
+import { DashboardComponent } from './Dashboard/dashboard/dashboard.component';
+import { ListComponent } from './Dashboard/list/list.component';
+import { NgChartsModule } from 'ng2-charts';
+import { SidenavComponent } from './Dashboard/sidenav/sidenav.component';
 
+// In your App's module:
+imports: [NgChartsModule];
 @NgModule({
   declarations: [
     AppComponent,
     Graph1Component,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    DashboardComponent,
+    ListComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
