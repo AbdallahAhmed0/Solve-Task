@@ -1,6 +1,21 @@
-<canvas baseChart
+<div class="container">
+  <p class="text">Hourly Sales</p>
+  <canvas baseChart
         [datasets]="radarChartDatasets"
         [options]="radarChartOptions"
         [labels]="radarChartLabels"
         [type]="'radar'">
 </canvas>
+<div class="section">
+  <ng-container *ngFor="let item of [1,2,3]">
+    <p class="text">Sales by Station</p>
+<img src="../../../assets/gas-station-svgrepo-com.svg" width="30" height="30" title="gas-station"
+alt="gas-station" />
+<span class="text-gas">Station Name</span>
+<span class="number">62,721 m<sup>3</sup></span>
+<div class="spinner">
+</div>
+
+  </ng-container>
+</div>
+</div>

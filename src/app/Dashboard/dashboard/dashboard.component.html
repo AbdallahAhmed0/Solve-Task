@@ -3,28 +3,48 @@
     <div class="card-body">
       <h5 class="card-title">71,028 <span>EGP</span></h5>
       <h6 class="card-subtitle mb-2 text-muted">Total Value</h6>
-      <p class="card-text" style="color: #FF7F5C;">2%</p>
+      <p class="card-text small-text-ora" style="color: #FF7F5C;">2%</p>
     </div>
   </div>
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">20,000 <span>m<sup>3</sup> </span></h5>
       <h6 class="card-subtitle mb-2 text-muted">Total Sales</h6>
-      <p class="card-text" style="color: #FF7F5C;">50 m<sup>3</sup></p>
+      <p class="card-text small-text" style="color: #00CBC0;">
+        50 m<sup>3</sup></p>
     </div>
   </div>
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">20,000 <span>m<sup>3</sup> </span></h5>
       <h6 class="card-subtitle mb-2 text-muted">Avg Sales</h6>
-      <p class="card-text" style="color: #FF7F5C;">50 m<sup>3</sup></p>
+      <p class="card-text small-text-ora" style="color: #FF7F5C;">50 m<sup>3</sup></p>
     </div>
   </div>
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">1567</h5>
       <h6 class="card-subtitle mb-2 text-muted">  Total Transaction Count</h6>
-      <p class="card-text" style="color: #FF7F5C;">50 m<sup>3</sup></p>
+      <p class="card-text small-text" style="color: #00CBC0;margin-top: 5px;">50 m<sup>3</sup></p>
     </div>
   </div>
+</div>
+<div class="btn-group" role="group">
+  <button type="button" class="btn" [ngClass]="{ active: graph }" (click)="toggleActive('graph')">
+    GRAPH
+  </button>
+  <button type="button" class="btn" [ngClass]="{ active: list }" (click)="toggleActive('list')">
+    LIST
+  </button>
+</div>
+<div class="content">
+  <app-graph1 *ngIf="graph"></app-graph1>
+  <div class="scroll-container">
+    <ng-container *ngFor="let item of [1, 2, 3, 4]">
+      <app-list *ngIf="list"></app-list>
+    </ng-container>
+  </div>
+
+
+
 </div>

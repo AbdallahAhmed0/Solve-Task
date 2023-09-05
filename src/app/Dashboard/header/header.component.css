@@ -1,49 +1,40 @@
 .header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 70px;
   background: #ffffff;
+  padding: 0 30px; /* Add padding for spacing on the sides */
 }
 
-.header-content {
-  display: flex;
-  flex-direction: row;
-}
-.content {
-  display: flex; /* Use flex to align child elements horizontally */
-  align-items: center; /* Center child elements vertically */
+.content-container {
+  margin-left: 100px; /* Add a 50px left margin */
+  padding: 20px; /* Optionally, add padding for content */
 }
 
 .gas-icon {
-  /* Layout Properties */
-  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
-  left: 150px;
-  opacity: 0.8;
+  position: relative; /* Add relative positioning */
 }
 
-/* Style the red circle below the image */
-.gas-icon::before ,.loading::before {
+/* Style the red circle below the gas icon */
+.gas-icon::before,.loading::before {
   content: "";
-  display: block;
-  width: 7px; /* Adjust the size as needed */
-  height: 7px; /* Adjust the size as needed */
-  background-color: #FF7F5C; /* Your desired color */
-  border-radius: 50%; /* Makes it a circle */
-  margin-top: 24px; /* Adjust the spacing below the image */
+  width: 7px;
+  height: 7px;
+  background-color: #FF7F5C;
+  border-radius: 50%;
   margin-right: 10px;
+  position: absolute; /* Position it relative to the gas icon */
+  left: -17px; /* Adjust the position as needed */
+  top: 81%; /* Vertically center it */
+  transform: translateY(-50%); /* Vertically center it */
 }
 
 .number {
-  margin: 15px;
   color: #3D5161;
   font-weight: 500;
   font-size: 22px;
@@ -54,28 +45,27 @@
   color: #3D5161;
   font-size: 8px;
   font-weight: 700;
-  display: inline-block;
+  margin-left: 5px;
   white-space: nowrap;
 }
 
 .loading {
-  position: relative;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  left: 200px;
-  opacity: 0.8;
+  position: relative; /* Add relative positioning */
+  margin-left: 30px;
 }
+
 
 .word {
   display: block;
 }
+
 .btn-group {
-  position: relative;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  left:250px;
+  float: right;
+  width: 80%;
 }
 
 .btn {
@@ -83,38 +73,35 @@
   color: #3D5161;
   font-size: 13px;
   border: none;
-  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s, border-radius 0.3s;
+  border-radius: 50px 50px 50px 50px;
 }
-
 .btn.active {
   background-color: #FF7F5C;
-  border-radius: 100%;
-  transform: rotate(-45deg);
-  transition: background-color 0.3s, border-radius 0.3s, transform 0.3s;
+  color: #ffffff;
+  border-radius: 50px 50px 50px 50px;
 }
 
-.btn:focus {
-  outline: none;
+.btn-group button:not(.active) {
+  cursor: pointer;
 }
+
+
 
 .date {
-  position: relative;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  left: 350px;
+  float: right;
+  width: 80%;
 }
 
 .inp-date {
   border: none;
-  border-bottom: 1px solid #000; /* Add an underline */
-  outline: none; /* Remove the default focus outline */
-  margin-left: 50px;
+  border-bottom: 1px solid #000;
+  outline: none;
+  margin-right: 10px; /* Add margin between date inputs */
 }
 
-/* Style the input when it's focused */
 .inp-date:focus {
-  border-bottom: 2px solid #FF7F5C; /* Change the underline color on focus */
+  border-bottom: 2px solid #FF7F5C;
 }

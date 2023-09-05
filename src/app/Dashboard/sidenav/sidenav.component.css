@@ -1,0 +1,32 @@
+.container{
+  margin-top: 100px;
+}
+.text{
+  margin: 20px 90px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #3D5161;
+}
+.spinner{
+  height: 5px;
+  background: linear-gradient(to right, #FF7F5C 40%, #ffceb6 20%);
+  margin-top: 8px;
+  width: 70%;
+  border-radius: 35px;
+}
+.section{
+  margin-top: 80px;
+}
+.text-gas{
+  margin: 70px 15px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #3D5161;
+}
+.number{
+  margin-right: 28%;
+  float: right;
+  font-size: 14px;
+  font-weight: 800;
+  color: #3D5161;
+}

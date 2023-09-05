@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  todayActive: boolean = true; // Default to 'TODAY' being active
+  yesterdayActive: boolean = false;
+  lastWeekActive: boolean = false;
+
+  constructor(){
+  }
+
+  toggleActive(button: string): void {
+    this.todayActive = button === 'today';
+    this.yesterdayActive = button === 'yesterday';
+    this.lastWeekActive = button === 'lastWeek';
+  }
 
 }

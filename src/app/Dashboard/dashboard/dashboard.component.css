@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  margin: 25px;
+  margin: 70px 25px ;
 }
 
 .card{
@@ -14,4 +14,67 @@ border-radius: 15px;
 border: none;
 
 }
+.btn-group {
+  display: flex;
+  align-items: right;
+  float: right;
+  width: 20%;
+}
 
+.btn {
+  background-color: #ffffff;
+  color: #3D5161;
+  font-size: 14px;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px 50px 50px 50px;
+}
+.btn.active {
+  background-color: #FF7F5C;
+  color: #ffffff;
+  border-radius: 50px 50px 50px 50px;
+}
+
+.btn-group button:not(.active) {
+  cursor: pointer;
+}
+.content{
+  margin-top: 15%;
+}
+.scroll-container {
+  height: 300px; /* Adjust the height as needed */
+  overflow-y: auto;
+}
+.small-text,.small-text-ora{
+  color: #3D5161;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 25px;
+  margin-left: 15px;
+}
+.small-text::before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent; /* Adjust the size as needed */
+  border-right: 5px solid transparent; /* Adjust the size as needed */
+  border-bottom: 10px solid #00CBC0; /* Adjust the size and color as needed */
+  bottom: 20px; /* Adjust the vertical position as needed */
+  left: 15px;
+}
+.small-text-ora::before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent; /* Adjust the size as needed */
+  border-right: 5px solid transparent; /* Adjust the size as needed */
+  border-top: 10px solid #FF7F5C; /* Replace with the desired color (#FF7F5C) */
+  top: 95px;
+  left: 15px;
+}
