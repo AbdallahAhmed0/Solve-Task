@@ -11,9 +11,11 @@ export class Graph1Component {
   public barChartPlugins = [];
 
   public barChartData: ChartConfiguration<'bar'>['data'] = {
-    labels: [ 'Station Name Dummy 1', 'Station Name Dummy 1', 'Station Name Dummy 1', 'Station Name Dummy 1', 'Station Name Dummy 1'],
+    labels: ['Station Name Dummy 1','Station Name Dummy 1',
+     'Station Name Dummy 1','Station Name Dummy 1', 'Station Name Dummy 1', 'Station Name Dummy 1',
+      'Station Name Dummy 1', 'Station Name Dummy 1'],
     datasets: [
-      { data: [ 255, 145, 200, 245, 145], label: 'Series A' },
+      { data: [ 255, 145, 200,100,350,25, 245, 145], label: 'Series A' },
     ]
   };
 
