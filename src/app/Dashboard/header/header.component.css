@@ -1,33 +1,55 @@
-header{
-/* Layout Properties */
-top: 0px;
-left: 0px;
-width: 100%;
-height: 70px;
-/* UI Properties */
-background: #b46060;
-opacity: 1;
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; /* Align items horizontally */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #ffffff;
 }
+
 .gas-icon{
 /* Layout Properties */
-position: relative; /* or absolute, or fixed */
-top: 15px;
+position: relative;
+display: flex;
+flex-direction: row;
+align-items: center;
 left: 150px;
-width: 38px;
-height: 33px;
-/* UI Properties */
-background: url('../../../assets/gas-station-svgrepo-com.png');
-opacity: 1;
+opacity: 0.8;
 }
-.dot
-{
-  /* Layout Properties */
-  position: relative;
-top: 69px;
-left: 193px;
-width: 10px;
-height: 10px;
-/* UI Properties */
-background: #FF7F5C 0% 0% no-repeat padding-box;
-opacity: 1;
+
+
+/* Style the red circle below the image */
+.gas-icon::before {
+  content: "";
+  display: block;
+  width: 7px; /* Adjust the size as needed */
+  height: 7px; /* Adjust the size as needed */
+  background-color: #FF7F5C; /* Your desired color */
+  border-radius: 50%; /* Makes it a circle */
+  margin-top: 24px; /* Adjust the spacing below the image */
+  margin-right: 10px;
+}
+.gas-icon .number{
+  margin: 15px;
+  color: #3D5161;
+  font-weight: 500;
+  font-size: 25px;
+  opacity: 0.9;
+}
+.text{
+  color: #3D5161;
+  font-size: 9px;
+  font-weight: 700;
+  display: inline-block;
+  white-space: nowrap;
+}
+.loading{
+  display: inline-flex;
+}
+.word {
+  display: block;
 }
