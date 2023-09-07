@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChartConfiguration } from 'chart.js';
+import { ChartConfiguration, ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,12 +7,26 @@ import { ChartConfiguration } from 'chart.js';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent {
-  public radarChartOptions: ChartConfiguration<'radar'>['options'] = {
+  public radarChartOptions: ChartOptions<'radar'> = {
     responsive: false,
-      layout: {
-          padding: 2
-  }
+    scales: {
+      r: {
+        max: 100, // Set the maximum value for the radar chart
+      },
+    },
+    plugins: {
+      legend: {
+        display: false, // Hide the legend if not needed
+      },
+    },
+    elements: {
+      point: {
+        radius: 0, // Set the point radius to 0 to make them invisible
+        borderWidth: 0, // Set the point border width to 0
+      },
+    },
   };
+
   public radarChartLabels: string[] = ['24:00', '2:00', '4:00', '6:00', '8:00', '10:00', '12:00',
                                         '14:00', '16:00', '18:00', '20:00', '22:00'];
 
@@ -29,4 +43,5 @@ export class SidenavComponent {
     backgroundColor: '#009ACF33',
     borderColor:'#009ACF'}
   ];
+
 }

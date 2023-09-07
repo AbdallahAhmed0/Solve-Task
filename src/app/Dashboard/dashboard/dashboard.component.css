@@ -1,6 +1,6 @@
 .cards{
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: row;
   margin: 70px 25px ;
 }
