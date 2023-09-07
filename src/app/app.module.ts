@@ -11,6 +11,9 @@ import { ListComponent } from './Dashboard/list/list.component';
 import { NgChartsModule } from 'ng2-charts';
 import { SidenavComponent } from './Dashboard/sidenav/sidenav.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Required for animations
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 // In your App's module:
 imports: [NgChartsModule];
 @NgModule({
@@ -26,7 +29,10 @@ imports: [NgChartsModule];
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgChartsModule
+    NgChartsModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]

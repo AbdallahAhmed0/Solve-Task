@@ -24,7 +24,7 @@
       </div>
       <div class="col-5">
         <div class="btn-group" role="group">
-          <button type="button" class="btn" [ngClass]="{ active: todayActive }" (click)="toggleActive('today')">
+          <button type="button" class="btn nn" [ngClass]="{ active: todayActive }" (click)="toggleActive('today')">
             TODAY
           </button>
           <button type="button" class="btn" [ngClass]="{ active: yesterdayActive }" (click)="toggleActive('yesterday')">
@@ -38,11 +38,25 @@
 
       <div class="col-5">
         <div class="date">
-          
-          <input type="datetime-local" placeholder="Start date-time" class="inp-date" />
-          <input type="datetime-local" placeholder="End date-time" class="inp-date" />
+          <input
+            type="date"
+            class="form-control triangle"
+            bsDatepicker
+            placeholder="Start date - time"
+            [(bsValue)]="selectedStartDate"
+            #datepicker="bsDatepicker"
+          />
+
+          <input
+            type="date"
+            class="form-control square"
+            bsDatepicker
+            placeholder="End date - time"
+            [(bsValue)]="selectedEndDate"
+            #datepicker="bsDatepicker"
+          />
         </div>
-      </div>
+              </div>
 
     </div>
   </div>

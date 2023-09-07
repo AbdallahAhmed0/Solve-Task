@@ -9,6 +9,8 @@ export class HeaderComponent {
   todayActive: boolean = true; // Default to 'TODAY' being active
   yesterdayActive: boolean = false;
   lastWeekActive: boolean = false;
+  selectedStartDate?:Date;
+  selectedEndDate?:Date;
 
   constructor(){
   }
