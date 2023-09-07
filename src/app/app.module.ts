@@ -12,7 +12,9 @@ import { NgChartsModule } from 'ng2-charts';
 import { SidenavComponent } from './Dashboard/sidenav/sidenav.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Required for animations
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
 
 // In your App's module:
 imports: [NgChartsModule];
@@ -31,7 +33,9 @@ imports: [NgChartsModule];
     AppRoutingModule,
     NgChartsModule,
     BrowserAnimationsModule,
-    BsDatepickerModule.forRoot()
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
 
   ],
   providers: [],
