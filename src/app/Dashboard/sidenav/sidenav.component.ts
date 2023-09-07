@@ -18,13 +18,13 @@ export class SidenavComponent {
 
   public radarChartDatasets: ChartConfiguration<'radar'>['data']['datasets'] = [
     {
-    data: [18, 59, 90, 10, 56, 20, 40,28, 48, 75, 19,56],
+    data: [80, 59, 90, 10, 56, 20, 40,28, 48, 75,90,85],
     label: '' ,
     backgroundColor: '#009ACF33',
     borderColor:'#009ACF',
 
   },
-    { data: [28, 48, 70, 19, 96, 27, 100, 81, 56, 55, 40,89],
+    { data: [28, 48, 70, 19, 96, 100, 81, 56, 55, 40,55,89],
     label: '',
     backgroundColor: '#009ACF33',
     borderColor:'#009ACF'}

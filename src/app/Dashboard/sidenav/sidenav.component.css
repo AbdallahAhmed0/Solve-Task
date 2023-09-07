@@ -15,6 +15,14 @@
   width: 70%;
   border-radius: 35px;
 }
+.slider-fixed-2{
+  height: 5px;
+  background: #B9CDE2;
+  margin-top: 8px;
+  width: 70%;
+  border-radius: 35px;
+}
+
 .section{
   margin-top: 80px;
 }
@@ -30,4 +38,9 @@
   font-size: 14px;
   font-weight: 800;
   color: #3D5161;
+}
+.nm{
+  color: #B9CDE2;
+  margin-right: 30%;
+
 }
