@@ -1,7 +1,7 @@
 <header class="header">
   <div class="content-container">
     <div class="row">
-      <div class="col-1">
+      <div class="col-1 mt-3">
         <div class="gas-icon">
           <img src="../../../assets/gas-station-svgrepo-com.svg" width="30" height="30" title="gas-station"
             alt="gas-station" />
@@ -12,7 +12,7 @@
           </span>
         </div>
       </div>
-      <div class="col-1">
+      <div class="col-1 mt-3">
         <div class="loading">
           <img src="../../../assets/loading.PNG" width="32" height="32" title="loading" alt="loading" />
           <span class="number">20S</span>
@@ -22,7 +22,7 @@
           </span>
         </div>
       </div>
-      <div class="col-5">
+      <div class="col-5 mt-3">
         <div class="btn-group" role="group">
           <button type="button" class="btn" [ngClass]="{ active: todayActive }" (click)="toggleActive('today')">
             TODAY
@@ -34,34 +34,25 @@
             LAST WEEK
           </button>
         </div>
-      </div>
-
+    </div>
       <div class="col-5">
         <div class="date">
-          <div class="input-group">
-            <input
-              type="text"
-              class="form-control triangle"
-              bsDatepicker
-              placeholder="Start date - time"
-
-            />
-          </div>
-
-          <div class="input-group">
-            <input
-              type="text"
-              class="form-control square"
-              bsDatepicker
-              placeholder="End date - time"
-            />
-            <span class="input-group-text">
-              <i class="ba ba-calendar"></i>
-            </span>
-          </div>
+          <mat-icon class="custom-icon">play_arrow</mat-icon>
+          <mat-form-field class="example-form-field">
+            <mat-label>Start date - time</mat-label>
+            <input matInput [matDatepicker]="startDatepicker">
+            <mat-datepicker-toggle matIconSuffix [for]="startDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #startDatepicker></mat-datepicker>
+          </mat-form-field>
+          <mat-icon class="square-icon">mode_comment</mat-icon>
+          <mat-form-field class="example-form-field square">
+            <mat-label>End date - time</mat-label>
+            <input matInput [matDatepicker]="endDatepicker">
+            <mat-datepicker-toggle matIconSuffix [for]="endDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #endDatepicker></mat-datepicker>
+          </mat-form-field>
         </div>
-      </div>
-
+      </div>      
     </div>
   </div>
 </header>

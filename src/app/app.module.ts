@@ -12,10 +12,12 @@ import { NgChartsModule } from 'ng2-charts';
 import { SidenavComponent } from './Dashboard/sidenav/sidenav.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Required for animations
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatInputModule } from '@angular/material/input';
-import { MatNativeDateModule } from '@angular/material/core';
-
+import {MatButtonModule} from '@angular/material/button';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
 // In your App's module:
 imports: [NgChartsModule];
 @NgModule({
@@ -33,9 +35,12 @@ imports: [NgChartsModule];
     AppRoutingModule,
     NgChartsModule,
     BrowserAnimationsModule,
-    MatDatepickerModule,
+    MatFormFieldModule,
     MatInputModule,
+    MatDatepickerModule,
     MatNativeDateModule,
+    MatButtonModule,
+    MatIconModule
 
   ],
   providers: [],

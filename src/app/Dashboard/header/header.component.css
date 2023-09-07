@@ -4,11 +4,10 @@
   left: 0;
   z-index: 999;
   width: 100%;
-  height: 70px;
+  height: 90px;
   background: #ffffff;
   padding: 0 30px; /* Add padding for spacing on the sides */
 }
-
 .content-container {
   margin-left: 100px; /* Add a 50px left margin */
   padding: 20px; /* Optionally, add padding for content */
@@ -90,15 +89,31 @@
 
 .date {
   display: flex;
+  flex-direction: row;
   align-items: center;
   float: right;
   width: 80%;
 }
+.example-form-field {
+  margin-right: 20px;
+  height: 65px;
 
-.inp-date {
-  border: none;
-  border-bottom: 1px solid #000;
-  outline: none;
-  margin-right: 10px; /* Add margin between date inputs */
+}
+/* Change the background color of mdc-text-field--filled to white */
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: white !important;
+
 }
 
+.custom-icon{
+  color: #FF7F5C;
+  right: 10px !important;
+  position: relative;
+  bottom: 4px !important;
+}
+.square-icon{
+  color: #FF7F5C;
+  right: 5px !important;
+  position: relative;
+  bottom: 4px !important;
+}
