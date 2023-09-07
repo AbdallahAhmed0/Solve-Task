@@ -45,6 +45,7 @@ border: none;
 .scroll-container {
   height: 300px; /* Adjust the height as needed */
   overflow-y: auto;
+  width: 90%;
 }
 .small-text,.small-text-ora{
   color: #3D5161;
