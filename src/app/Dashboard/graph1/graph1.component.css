@@ -1,4 +1,7 @@
-canvas
-{
-  width: 700px;
+.chart-container {
+  position: relative;
+  width: 80%;
+  max-width: 800px; /* Adjust the maximum width as needed */
+  height: 320px;
+  background: #fff;
 }
