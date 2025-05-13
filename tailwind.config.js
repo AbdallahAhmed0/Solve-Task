@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'neo-sans': ['Neo Sans Arabic', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif']
+
       },
     },
   },

@@ -1,0 +1,100 @@
+<div class="bg-white border border-[#ECF0F5] rounded-[6px] p-3 m-3 flex flex-col gap-6" [attr.dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
+    <div class="flex justify-between  items-center ">
+        <div class="flex items-center m-3 ">
+            <div class=" h-[30px] flex items-center text-[20px] mx-3 font-[600] text-[#1C1C28] font-poppins">012345678910</div>
+            <button class="w-[102px] h-[28px] bg-[#48B29A] hover:bg-[#3a8f7c] text-white rounded-[4px] px-4 py-1.5 gap-1.5 flex items-center justify-center cursor-pointer transition duration-300">
+                {{ 'IN_USE' | translate }}
+            </button>
+        </div>
+<div class="relative inline-block text-left">
+
+  <!-- Three dots button -->
+  <button
+    id="menuButton"
+    (click)="toggleMenu()"
+    class="text-gray-500 hover:text-gray-900 cursor-pointer" 
+    [ngClass]="{'text-blue-600': isOpen}"
+    aria-haspopup="true"
+    [attr.aria-expanded]="isOpen"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+         viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 12h.01M12 12h.01M20 12h.01M5 12a1 1 0 110-2 1 1 0 010 2zm7 0a1 1 0 110-2 1 1 0 010 2zm7 0a1 1 0 110-2 1 1 0 010 2z" />
+    </svg>
+  </button>
+
+  <!-- Dropdown menu -->
+<div
+    *ngIf="isOpen"
+    id="dropdownMenu"
+    class="fixed z-50 w-[123px] h-[80px] rounded-[4px] border border-gray-200 bg-white p-[6px] shadow-lg"
+    [ngClass]="{'left-[30px]': currentDirection ==='ltr', 'right-[30px]': currentDirection ==='rtl'}"
+    role="menu"
+>
+    <div class="flex flex-col gap-[2px]">
+        <button
+            (click)="closeMenu()"
+            class="block w-full px-4 py-2 text-sm hover:bg-blue-50 text-right flex items-center justify-end gap-2"
+            role="menuitem"
+            style="font-family: 'Neo Sans Arabic'; font-weight: 400; font-size: 14px; line-height: 21px; letter-spacing: 0%; text-align: right; color: #1C1C28;"
+        >
+            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.13728 11.7781L0.418533 14.2187L0.0310334 15.5375C-0.0470916 15.8031 0.0247834 16.0875 0.218533 16.2812C0.412283 16.475 0.696658 16.5469 0.959158 16.4719L2.28103 16.0812L4.72166 15.3625C5.10916 15.25 5.46228 15.0531 5.76541 14.7875C5.80916 14.75 5.84978 14.7094 5.89041 14.6687L15.3967 5.16562C16.081 4.48124 16.1654 3.42812 15.6529 2.64999C15.581 2.54062 15.4935 2.43437 15.3967 2.33749L14.1654 1.10312C13.3842 0.321869 12.1185 0.321869 11.3373 1.10312L1.83103 10.6094C1.50603 10.9344 1.26853 11.3375 1.13728 11.7781ZM2.57478 12.2C2.62791 12.025 2.71541 11.8625 2.83728 11.725C2.85603 11.7062 2.87166 11.6875 2.89041 11.6687L10.031 4.53124L11.9685 6.46874L4.83103 13.6094C4.68416 13.7562 4.49978 13.8656 4.29978 13.925L3.56853 14.1406L1.85603 14.6437L2.35916 12.9312L2.57478 12.2Z" fill="#6B7280"/>
+            </svg>
+
+            {{ 'edit_number' | translate }}
+        </button>
+         <button
+            (click)="closeMenu()"
+            class="block w-full px-4 py-2 text-sm hover:bg-blue-50 text-right flex items-center justify-end gap-2"
+            role="menuitem"
+            style="font-family: 'Neo Sans Arabic'; font-weight: 400; font-size: 14px; line-height: 21px; letter-spacing: 0%; text-align: right; color: #FF4B55;"
+        >
+        <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="Primary" d="M0.970141 0.227433C0.710141 0.022433 0.33264 0.069933 0.127641 0.329933C-0.0773595 0.589933 -0.0298595 0.967433 0.230141 1.17243L15.0301 12.7724C15.2901 12.9774 15.6676 12.9299 15.8726 12.6699C16.0776 12.4099 16.0301 12.0324 15.7701 11.8274L14.3601 10.7224C15.3476 10.0824 16.0001 8.96993 16.0001 7.70493C16.0001 5.81243 14.5326 4.24243 12.6426 4.11743L12.4401 4.10493C12.1101 4.08243 11.8226 4.33243 11.8026 4.66493C11.7826 4.99743 12.0301 5.28243 12.3601 5.30243L12.5626 5.31493C13.8226 5.39993 14.8001 6.44493 14.8001 7.70493C14.8001 8.69993 14.1926 9.55493 13.3301 9.91493L10.3701 7.59493C10.8901 6.96993 11.2001 6.16743 11.2001 5.29743C11.2001 3.30993 9.59014 1.69993 7.60264 1.69993H3.59764C3.37014 1.69993 3.14514 1.72243 2.92764 1.76243L0.970141 0.227433ZM4.38014 2.89993H7.60514C8.92764 2.89993 10.0026 3.97243 10.0026 5.29743C10.0026 5.88993 9.78764 6.43493 9.42764 6.85493L4.38014 2.89993ZM11.1701 11.2999L9.64764 10.0999H8.40014C7.07514 10.0999 6.00264 9.02743 6.00264 7.70243C6.00264 7.55243 6.01764 7.40243 6.04264 7.25993L5.02264 6.45743C4.88014 6.84743 4.80014 7.26743 4.80014 7.70243C4.80014 9.68993 6.41014 11.2999 8.39764 11.2999H11.1701ZM0.75264 3.09243C0.280141 3.70243 0.000140524 4.46743 0.000140524 5.29743C0.000140524 7.18993 1.46764 8.75993 3.35764 8.88493L3.56014 8.89743C3.89014 8.91993 4.17764 8.66993 4.19764 8.33993C4.21764 8.00993 3.97014 7.72243 3.63764 7.70243L3.43514 7.68993C2.17764 7.60493 1.20014 6.55743 1.20014 5.29743C1.20014 4.74743 1.38514 4.24243 1.69514 3.83743L0.75264 3.09243Z" fill="#FF4B55"/>
+</svg>
+            {{ 'unassign' | translate }}
+        </button>
+    </div>
+</div>
+</div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-sm m-3">
+        <div class="flex flex-col items-center text-center">
+            <div class="text-gray-500">{{ 'PROTOCOL_NAME' | translate }}</div>
+            <div>فودافون مصر</div>
+        </div>
+        <div class="flex flex-col items-center text-center">
+            <div class="text-gray-500">{{ 'LAST_RECHARGE_DATE' | translate }}</div>
+            <div>2024/12/29</div>
+        </div>
+        <div class="flex flex-col items-center text-center">
+            <div class="text-gray-500">{{ 'COUNTRY' | translate }}</div>
+            <div class="flex items-center gap-1">
+                <img src="https://flagcdn.com/w40/jo.png" alt="flag" class="w-5 h-4 rounded-sm" />
+                <span>المملكة الأردنية الهاشمية</span>
+            </div>
+        </div>
+        <div class="flex flex-col items-center text-center">
+            <div class="text-gray-500">{{ 'CURRENT_BALANCE' | translate }}</div>
+            <div>5000 ج.م</div>
+        </div>
+        <div class="flex flex-col items-center text-center">
+            <div class="text-gray-500">{{ 'USED_BALANCE_CURRENT_CUSTOMER' | translate }}</div>
+            <div>5000 ج.م</div>
+        </div>
+        <div  class="flex flex-col items-center text-center">
+            <div class="text-gray-500">{{ 'USED_BALANCE_TOTAL' | translate }}</div>
+            <div>5000 ج.م</div>
+        </div>
+        <div class="flex flex-col items-center text-center">
+            <div class="text-gray-500">{{ 'CURRENT_CUSTOMER' | translate }}</div>
+            <div class="truncate">الشركة الألمانية للإبادة...</div>
+        </div>
+        <div class="flex flex-col items-center text-center">
+            <div class="text-gray-500">{{ 'EXTENSIONS_COUNT' | translate }}</div>
+            <div>09</div>
+        </div>
+    </div>
+</div>

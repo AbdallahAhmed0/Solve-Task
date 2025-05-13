@@ -1,4 +1,13 @@
 {
-    "SHOWNUMBER": "عرض الرقم"
+    "SHOW_NUMBER": "عرض الرقم",
+    "IN_USE": "قيد الاستخدام",
+    "PROTOCOL_NAME": "اسم البروتوكول",
+    "LAST_RECHARGE_DATE": "تاريخ آخر شحنة",
+    "COUNTRY": "الدولة",
+    "CURRENT_BALANCE": "الرصيد الحالي",
+    "USED_BALANCE_CURRENT_CUSTOMER": "الرصيد المستخدم للعميل الحالي",
+    "USED_BALANCE_TOTAL": "الرصيد المستخدم للرقم ككل",
+    "CURRENT_CUSTOMER": "العميل الحالي",
+    "EXTENSIONS_COUNT": "عدد الإمتدادات"
 
 }

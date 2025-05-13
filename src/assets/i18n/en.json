@@ -1,3 +1,12 @@
 {
-    "SHOWNUMBER": "Show Number"
+    "SHOW_NUMBER": "Show Number",
+    "IN_USE": "In Use",
+    "PROTOCOL_NAME": "Protocol Name",
+    "LAST_RECHARGE_DATE": "Last Recharge Date",
+    "COUNTRY": "Country",
+    "CURRENT_BALANCE": "Current Balance",
+    "USED_BALANCE_CURRENT_CUSTOMER": "Used Balance (Current Customer)",
+    "USED_BALANCE_TOTAL": "Used Balance (Total)",
+    "CURRENT_CUSTOMER": "Current Customer",
+    "EXTENSIONS_COUNT": "Extensions Count"
 }

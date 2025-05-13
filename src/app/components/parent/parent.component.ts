@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component} from '@angular/core';
 import { DirectionService } from '../../core/services/direction.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
@@ -28,4 +28,7 @@ export class ParentComponent {
         this.translate.use(this.currentLang);
     }
     
+}
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
 }
