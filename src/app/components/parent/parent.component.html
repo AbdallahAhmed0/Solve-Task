@@ -1,0 +1,22 @@
+<div class="w-full bg-white rounded-t-lg shadow-sm" [dir]="currentDirection">
+    <!-- Header Section -->
+    <div class="h-[42px] flex justify-between rounded-t-[8px] py-[9px] px-[16px] border-b border-[#E4E4E4]">
+        <div class="w-[20px] h-[20px] rounded-[5.47px] bg-[#F4F4F4] relative">
+            <button class="absolute inset-0 flex items-center justify-center">
+                <span class="text-[#1C1C28] hover:text-[#FF4B55] text-lg">×</span>
+            </button>
+        </div>
+        <div class="h-[24px] flex items-center">
+            <button 
+                (click)="toggleDirection()" 
+                class="px-2 py-1 mr-2 bg-[#3E97FF] text-white rounded-md text-sm"
+            >
+                {{ currentDirection === 'rtl' ? 'LTR' : 'RTL' }}
+            </button>
+            <p class="h-[21px] mx-[8px] font-neo-sans font-[500] text-[14px] leading-[150%] tracking-[0%] text-right text-[#1C1C28]">{{ 'SHOWNUMBER' | translate }}</p>
+            <div class="w-[22px] h-[22px] rounded-[4px] bg-[rgba(62,151,255,0.1)] relative">
+                <span class="absolute flex items-center justify-center inset-0 text-[#3E97FF]">#</span>
+            </div>
+        </div>
+    </div>
+</div>

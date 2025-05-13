@@ -2,7 +2,11 @@ module.exports = {
   content: ["./src/**/*.{html,ts}"],
   darkMode: 'class', // or 'media'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'neo-sans': ['Neo Sans Arabic', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
   corePlugins: {

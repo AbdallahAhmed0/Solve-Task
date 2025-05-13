@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DirectionService {
-  private currentDirection: 'rtl' | 'ltr' = 'ltr';
+  private currentDirection: 'rtl' | 'ltr' = 'rtl';
 
   constructor() { }
 
