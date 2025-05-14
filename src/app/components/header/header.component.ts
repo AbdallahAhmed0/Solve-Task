@@ -1,6 +1,7 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject } from '@angular/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { DirectionService } from '../../core/services/direction.service';
 
 @Component({
   selector: 'app-header',
@@ -8,22 +9,14 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [TranslateModule,CommonModule],
 })
 export class HeaderComponent {
-  currentDirection: 'rtl' | 'ltr' = 'ltr'; // Default direction
-  currentLang: 'ar' | 'en' = 'ar'; // Default language
   isOpen = false;
 
-  constructor(private translate: TranslateService,
+  constructor(public directionService: DirectionService,
               @Inject(DOCUMENT) private document: Document
   ) {
-    this.translate.setDefaultLang(this.currentLang);
-    this.translate.use(this.currentLang);
+    this.directionService.currentDirection();
   }
 
- toggleDirection() {
-        this.currentDirection = this.currentDirection === 'rtl' ? 'ltr' : 'rtl';
-        this.currentLang = this.currentDirection === 'rtl' ? 'en' : 'ar';
-        this.translate.use(this.currentLang);
-    }
 
   toggleMenu() {
     this.isOpen = !this.isOpen;

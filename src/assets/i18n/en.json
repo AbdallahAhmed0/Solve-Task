@@ -8,5 +8,10 @@
     "USED_BALANCE_CURRENT_CUSTOMER": "Used Balance (Current Customer)",
     "USED_BALANCE_TOTAL": "Used Balance (Total)",
     "CURRENT_CUSTOMER": "Current Customer",
-    "EXTENSIONS_COUNT": "Extensions Count"
+    "EXTENSIONS_COUNT": "Extensions Count",
+    "edit_number": "Edit Number",
+    "unassign": "Unassign",
+    "Created_By": "Created By",
+    "Created_At": "Created At"
+
 }

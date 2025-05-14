@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [ParentComponent,HeaderComponent],
+  imports: [ParentComponent],
 })
 
 export class AppComponent {

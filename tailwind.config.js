@@ -10,7 +10,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+      plugins: [require('tailwindcss-rtl')],
+
   corePlugins: {
     textAlign: false, // Disable default textAlign utilities
   },

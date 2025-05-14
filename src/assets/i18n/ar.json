@@ -8,6 +8,10 @@
     "USED_BALANCE_CURRENT_CUSTOMER": "الرصيد المستخدم للعميل الحالي",
     "USED_BALANCE_TOTAL": "الرصيد المستخدم للرقم ككل",
     "CURRENT_CUSTOMER": "العميل الحالي",
-    "EXTENSIONS_COUNT": "عدد الإمتدادات"
+    "EXTENSIONS_COUNT": "عدد الإمتدادات",
+    "edit_number": "تعديل الرقم",
+    "unassign": "إلغاء التعيين",
+    "Created_By":"تم الإنشاء بواسطة",
+    "Created_At":"تاريخ الإنشاء"
 
 }

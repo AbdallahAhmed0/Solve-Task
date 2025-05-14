@@ -1,25 +1,24 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Signal, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DirectionService {
-  private currentDirection: 'rtl' | 'ltr' = 'rtl';
+   currentDirection = signal<'rtl' | 'ltr'>('rtl');
 
-  constructor() { }
+  constructor() {
+    this.setDirection(this.currentDirection());
+   }
 
-  getDirection(): 'rtl' | 'ltr' {
-    return this.currentDirection;
-  }
 
   setDirection(direction: 'rtl' | 'ltr') {
-    this.currentDirection = direction;
+    this.currentDirection.set(direction);
     document.documentElement.setAttribute('dir', direction);
     document.body.classList.remove('dir-rtl', 'dir-ltr');
     document.body.classList.add(`dir-${direction}`);
   }
 
   toggleDirection() {
-    this.setDirection(this.currentDirection === 'ltr' ? 'rtl' : 'ltr');
+    this.setDirection(this.currentDirection() === 'ltr' ? 'rtl' : 'ltr');
   }
 }
