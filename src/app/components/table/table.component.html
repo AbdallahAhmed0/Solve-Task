@@ -55,23 +55,24 @@
        {{"TOTAL" | translate}} <span class="font-semibold">{{ tableData.length }}</span>
     </div>
 
-    <div class="flex items-center space-x-1 rtl:space-x-reverse">
-      <button class="px-3 py-1 rounded hover:bg-gray-100" [disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">
-        &lt;
-      </button>
-      <button
-        *ngFor="let page of pages"
-        (click)="changePage(page)"
-        class="px-3 py-1 rounded"
-        [class.bg-blue-500]="currentPage === page"
-        [class.text-white]="currentPage === page"
-        [class.hover:bg-gray-100]="currentPage !== page"
-      >
-        {{ page }}
-      </button>
-      <button class="px-3 py-1 rounded hover:bg-gray-100" [disabled]="currentPage === totalPages" (click)="changePage(currentPage + 1)">
-        &gt;
-      </button>
-    </div>
+<div class="flex items-center space-x-1" dir="ltr">
+  <button class="px-3 py-1 rounded hover:bg-gray-100" [disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">
+    &lt;
+  </button>
+  <button
+    *ngFor="let page of pages"
+    (click)="changePage(page)"
+    class="px-3 py-1 rounded"
+    [class.bg-blue-500]="currentPage === page"
+    [class.text-white]="currentPage === page"
+    [class.hover:bg-gray-100]="currentPage !== page"
+  >
+    {{ page }}
+  </button>
+  <button class="px-3 py-1 rounded hover:bg-gray-100" [disabled]="currentPage === totalPages" (click)="changePage(currentPage + 1)">
+    &gt;
+  </button>
+</div>
+
   </div>
 </div>
