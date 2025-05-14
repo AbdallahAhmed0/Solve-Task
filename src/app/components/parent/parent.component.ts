@@ -6,10 +6,11 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
 import { LanguageService } from '../../core/services/language.service';
+import { TableComponent } from "../table/table.component";
 
 @Component({
   selector: 'app-parent',
-  imports: [TranslateModule, HeaderComponent, FooterComponent],
+  imports: [TranslateModule, HeaderComponent, FooterComponent, TableComponent],
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.scss'
 })

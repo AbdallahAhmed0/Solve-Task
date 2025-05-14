@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ParentComponent } from "./components/parent/parent.component";
 import { TranslateService } from '@ngx-translate/core';
-import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
