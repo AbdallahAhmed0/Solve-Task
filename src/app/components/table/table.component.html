@@ -2,9 +2,11 @@
 <div class="overflow-x-auto">
     <table class="min-w-full text-sm" [ngClass]="{'text-right': languageService.currentLang() === 'ar', 'text-left': languageService.currentLang() === 'en'}">
       
-      <thead class="bg-[#F4F5F7] text-[#6B7280] h-[40px] rounded-[6px]">
+      <thead class="bg-[#F4F5F7] text-[#6B7280] h-[40px] rounded-[6px]"data-aos="fade-right"
+     data-aos-offset="250"
+     data-aos-easing="ease-in-sine">
         <tr>
-          <th
+          <th 
           *ngFor="let header of headers"
           class="px-4 font-neo-sans text-[10px] md:text-[13px]">
       {{ languageService.currentLang() === 'ar' ? header.labelAr : header.labelEn }}
@@ -14,8 +16,10 @@
 </thead>
 
 
-<tbody>
-  <ng-container *ngFor="let record of paginatedData">
+<tbody data-aos="fade-down"
+     data-aos-offset="250"
+     data-aos-easing="ease-in-sine">
+  <ng-container *ngFor="let record of paginatedData" >
     <!-- Spacer row -->
     <tr><td class="h-2 p-0" [attr.colspan]="headers.length"></td></tr>
 
