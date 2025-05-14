@@ -47,25 +47,142 @@ infoItems:InfoItem[] = [
 // send data to table component
 headers: TableHeader[] = [
   { field: 'customer', labelAr: 'العميل', labelEn: 'Customer' },
-  { field: 'assignDate', labelAr: 'تاريخ التعيين', labelEn: 'Assignment Date' },
+  { field: 'assignmentDate', labelAr: 'تاريخ التعيين', labelEn: 'Assignment Date' },
   { field: 'cancelDate', labelAr: 'تاريخ إلغاء التعيين', labelEn: 'Cancel Date' },
   { field: 'responsible', labelAr: 'المسؤول عن التعيين', labelEn: 'Responsible' },
   { field: 'localMinutes', labelAr: 'الدقائق المحلية', labelEn: 'Local Minutes' },
-  { field: 'internationalMinutes', labelAr: 'الدقائق الدولية', labelEn: 'International Minutes' },
+  { field: 'intlMinutes', labelAr: 'الدقائق الدولية', labelEn: 'International Minutes' },
   { field: 'amount', labelAr: 'المبلغ', labelEn: 'Amount' }
 ];
 
 allRecords: TableRecord[] = [
+ {
+    customer: { ar: 'شركة الفضاء العربي', en: 'Arabia Space Co.' },assignmentDate: { ar: '05/01/2024', en: '01/05/2024' },cancelDate: { ar: '10/01/2024', en: '01/10/2024' },responsible: { ar: 'محمود أحمد', en: 'Mahmoud Ahmed' },localMinutes: { ar: '1234', en: '1234' },intlMinutes: { ar: '56', en: '56' },amount: { ar: '12345 ج.م', en: '12,345 EGP' }
+  },
   {
-    customer: { ar: 'الشركة الألمانية للإبادة...', en: 'German Pest Control Co...' },
-    assignmentDate: { ar: '01/12/2024', en: '12/01/2024' },
-    cancelDate: { ar: '-', en: '-' },
-    responsible: { ar: 'عبدالرحيم إسماعيل ناصف', en: 'Abdelrahim Ismail Nasif' },
-    localMinutes: { ar: '7654', en: '7654' },
-    intlMinutes: { ar: '122', en: '122' },
-    amount: { ar: '61890 ج.م', en: '61890 EGP' }
-  }
-];  
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },
+  {
+    customer: { ar: 'شركة الغذاء الأخضر', en: 'Green Foods Inc.' },assignmentDate: { ar: '10/04/2024', en: '04/10/2024' },cancelDate: { ar: '15/04/2024', en: '04/15/2024' },responsible: { ar: 'خالد إبراهيم', en: 'Khaled Ibrahim' },localMinutes: { ar: '4567', en: '4567' },intlMinutes: { ar: '12', en: '12' },amount: { ar: '45678 ج.م', en: '45,678 EGP' }
+  },
+  {
+    customer: { ar: 'مؤسسة البرمجة العربية', en: 'Arabia Coding Org.' },assignmentDate: { ar: '20/05/2024', en: '05/20/2024' },cancelDate: { ar: '25/05/2024', en: '05/25/2024' },responsible: { ar: 'نور خالد', en: 'Noor Khaled' },localMinutes: { ar: '5678', en: '5678' },intlMinutes: { ar: '34', en: '34' },amount: { ar: '56789 ج.م', en: '56,789 EGP' }
+  },{
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },
+  {
+    customer: { ar: 'شركة الغذاء الأخضر', en: 'Green Foods Inc.' },assignmentDate: { ar: '10/04/2024', en: '04/10/2024' },cancelDate: { ar: '15/04/2024', en: '04/15/2024' },responsible: { ar: 'خالد إبراهيم', en: 'Khaled Ibrahim' },localMinutes: { ar: '4567', en: '4567' },intlMinutes: { ar: '12', en: '12' },amount: { ar: '45678 ج.م', en: '45,678 EGP' }
+  },{
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },
+  {
+    customer: { ar: 'شركة الغذاء الأخضر', en: 'Green Foods Inc.' },assignmentDate: { ar: '10/04/2024', en: '04/10/2024' },cancelDate: { ar: '15/04/2024', en: '04/15/2024' },responsible: { ar: 'خالد إبراهيم', en: 'Khaled Ibrahim' },localMinutes: { ar: '4567', en: '4567' },intlMinutes: { ar: '12', en: '12' },amount: { ar: '45678 ج.م', en: '45,678 EGP' }
+  },{
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },
+  {
+    customer: { ar: 'شركة الغذاء الأخضر', en: 'Green Foods Inc.' },assignmentDate: { ar: '10/04/2024', en: '04/10/2024' },cancelDate: { ar: '15/04/2024', en: '04/15/2024' },responsible: { ar: 'خالد إبراهيم', en: 'Khaled Ibrahim' },localMinutes: { ar: '4567', en: '4567' },intlMinutes: { ar: '12', en: '12' },amount: { ar: '45678 ج.م', en: '45,678 EGP' }
+  },{
+    customer: { ar: 'شركة الفضاء العربي', en: 'Arabia Space Co.' },assignmentDate: { ar: '05/01/2024', en: '01/05/2024' },cancelDate: { ar: '10/01/2024', en: '01/10/2024' },responsible: { ar: 'محمود أحمد', en: 'Mahmoud Ahmed' },localMinutes: { ar: '1234', en: '1234' },intlMinutes: { ar: '56', en: '56' },amount: { ar: '12345 ج.م', en: '12,345 EGP' }
+  },
+  {
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },{
+    customer: { ar: 'شركة الفضاء العربي', en: 'Arabia Space Co.' },assignmentDate: { ar: '05/01/2024', en: '01/05/2024' },cancelDate: { ar: '10/01/2024', en: '01/10/2024' },responsible: { ar: 'محمود أحمد', en: 'Mahmoud Ahmed' },localMinutes: { ar: '1234', en: '1234' },intlMinutes: { ar: '56', en: '56' },amount: { ar: '12345 ج.م', en: '12,345 EGP' }
+  },
+  {
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },{
+    customer: { ar: 'شركة الفضاء العربي', en: 'Arabia Space Co.' },assignmentDate: { ar: '05/01/2024', en: '01/05/2024' },cancelDate: { ar: '10/01/2024', en: '01/10/2024' },responsible: { ar: 'محمود أحمد', en: 'Mahmoud Ahmed' },localMinutes: { ar: '1234', en: '1234' },intlMinutes: { ar: '56', en: '56' },amount: { ar: '12345 ج.م', en: '12,345 EGP' }
+  },
+  {
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },{
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },{
+    customer: { ar: 'شركة الفضاء العربي', en: 'Arabia Space Co.' },assignmentDate: { ar: '05/01/2024', en: '01/05/2024' },cancelDate: { ar: '10/01/2024', en: '01/10/2024' },responsible: { ar: 'محمود أحمد', en: 'Mahmoud Ahmed' },localMinutes: { ar: '1234', en: '1234' },intlMinutes: { ar: '56', en: '56' },amount: { ar: '12345 ج.م', en: '12,345 EGP' }
+  },
+  {
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },{
+    customer: { ar: 'شركة الفضاء العربي', en: 'Arabia Space Co.' },assignmentDate: { ar: '05/01/2024', en: '01/05/2024' },cancelDate: { ar: '10/01/2024', en: '01/10/2024' },responsible: { ar: 'محمود أحمد', en: 'Mahmoud Ahmed' },localMinutes: { ar: '1234', en: '1234' },intlMinutes: { ar: '56', en: '56' },amount: { ar: '12345 ج.م', en: '12,345 EGP' }
+  },
+  {
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },{
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },{
+    customer: { ar: 'شركة الفضاء العربي', en: 'Arabia Space Co.' },assignmentDate: { ar: '05/01/2024', en: '01/05/2024' },cancelDate: { ar: '10/01/2024', en: '01/10/2024' },responsible: { ar: 'محمود أحمد', en: 'Mahmoud Ahmed' },localMinutes: { ar: '1234', en: '1234' },intlMinutes: { ar: '56', en: '56' },amount: { ar: '12345 ج.م', en: '12,345 EGP' }
+  },
+  {
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },{
+    customer: { ar: 'شركة الفضاء العربي', en: 'Arabia Space Co.' },assignmentDate: { ar: '05/01/2024', en: '01/05/2024' },cancelDate: { ar: '10/01/2024', en: '01/10/2024' },responsible: { ar: 'محمود أحمد', en: 'Mahmoud Ahmed' },localMinutes: { ar: '1234', en: '1234' },intlMinutes: { ar: '56', en: '56' },amount: { ar: '12345 ج.م', en: '12,345 EGP' }
+  },
+  {
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },{
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },{
+    customer: { ar: 'شركة الفضاء العربي', en: 'Arabia Space Co.' },assignmentDate: { ar: '05/01/2024', en: '01/05/2024' },cancelDate: { ar: '10/01/2024', en: '01/10/2024' },responsible: { ar: 'محمود أحمد', en: 'Mahmoud Ahmed' },localMinutes: { ar: '1234', en: '1234' },intlMinutes: { ar: '56', en: '56' },amount: { ar: '12345 ج.م', en: '12,345 EGP' }
+  },
+  {
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },{
+    customer: { ar: 'شركة الفضاء العربي', en: 'Arabia Space Co.' },assignmentDate: { ar: '05/01/2024', en: '01/05/2024' },cancelDate: { ar: '10/01/2024', en: '01/10/2024' },responsible: { ar: 'محمود أحمد', en: 'Mahmoud Ahmed' },localMinutes: { ar: '1234', en: '1234' },intlMinutes: { ar: '56', en: '56' },amount: { ar: '12345 ج.م', en: '12,345 EGP' }
+  },
+  {
+    customer: { ar: 'المؤسسة التقنية للخدمات', en: 'Tech Services Ltd.' },assignmentDate: { ar: '15/02/2024', en: '02/15/2024' },cancelDate: { ar: '20/02/2024', en: '02/20/2024' },responsible: { ar: 'علي يوسف', en: 'Ali Youssef' },localMinutes: { ar: '2345', en: '2345' },intlMinutes: { ar: '78', en: '78' },amount: { ar: '23456 ج.م', en: '23,456 EGP' }
+  },
+  {
+    customer: { ar: 'الشركة العالمية للنقل', en: 'Global Transport Co.' },assignmentDate: { ar: '01/03/2024', en: '03/01/2024' },cancelDate: { ar: '06/03/2024', en: '03/06/2024' },responsible: { ar: 'سلمى مصطفى', en: 'Salma Mostafa' },localMinutes: { ar: '3456', en: '3456' },intlMinutes: { ar: '90', en: '90' },amount: { ar: '34567 ج.م', en: '34,567 EGP' }
+  },
+];
 constructor(public directionService: DirectionService,
               private languageService:LanguageService,
               private translate: TranslateService
