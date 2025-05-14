@@ -35,6 +35,7 @@ infoItems = [
     label: 'CURRENT_CUSTOMER',
     valueAr: 'الشركة الألمانية للإبادة...',
     valueEn: 'German Pest Control Co...',
+    flag:'assets/images/company.jpg',
     truncate: true,
   },
   { label: 'EXTENSIONS_COUNT', valueAr: '09', valueEn: '09' }
