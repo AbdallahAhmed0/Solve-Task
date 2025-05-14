@@ -3,6 +3,7 @@ import { Component, HostListener, Inject, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { DirectionService } from '../../core/services/direction.service';
 import { LanguageService } from '../../core/services/language.service';
+import { InfoItem } from '../../core/models/items-header.model';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { LanguageService } from '../../core/services/language.service';
 })
 export class HeaderComponent {
   isOpen = false;
-  @Input() items: any[] = [];
+  @Input() items: InfoItem[] = [];
   @Input() phone: string = '';
 
   constructor(public directionService: DirectionService,
