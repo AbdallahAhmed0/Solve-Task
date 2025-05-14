@@ -1,11 +1,10 @@
 <div class="bg-white border border-[#ECF0F5] rounded-[6px] p-3 m-3 flex flex-col gap-6" [dir]="directionService.currentDirection()">
-    {{directionService.currentDirection()}}
     <div class="flex justify-between  items-center ">
         <div class="flex items-center m-3 ">
-            <div class=" h-[30px] flex items-center text-[20px] mx-3 font-[600] text-[#1C1C28] font-poppins">012345678910</div>
-            <button class="h-[28px] bg-[#48B29A] hover:bg-[#3a8f7c] text-white rounded-[4px] px-4 py-1.5 gap-1.5 flex items-center justify-center cursor-pointer transition duration-300">
+            <div class=" h-[30px] flex items-center text-[13px] md:text-[20px] mx-3 font-[300] md:font-[600]  text-[#1C1C28] font-poppins">{{phone}}</div>
+            <div class="h-[28px] bg-[#48B29A]  text-white rounded-[4px] px-1 md:px-4 text-l md:text-xl py-1.5 gap-1.5 flex items-center justify-center">
                 {{ 'IN_USE' | translate }}
-            </button>
+            </div>
         </div>
 <div class="relative inline-block text-left">
 
@@ -61,41 +60,26 @@
 </div>
 </div>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-sm m-3">
-        <div class="flex flex-col items-center text-center">
-            <div class="text-gray-500">{{ 'PROTOCOL_NAME' | translate }}</div>
-            <div>فودافون مصر</div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-sm m-3" >
+  <ng-container *ngFor="let item of items">
+    <div class="flex flex-col items-center text-center">
+    <div class="text-[#6B7280] font-neo-sans font-normal text-sm leading-none text-center align-middle">{{ item.label | translate }}</div>
+
+      <!-- Country case with flag -->
+      <div *ngIf="item.flag; else normalValue" class="flex items-center gap-1">
+        <img [src]="item.flag" alt="flag" class="w-5 h-4 rounded-sm" />
+        <span>{{ languageService.currentLang() === 'ar' ? item.valueAr : item.valueEn }}</span>
+      </div>
+
+      <!-- Normal value or truncated -->
+      <ng-template #normalValue>
+        <div [ngClass]="{ 'truncate': item.truncate }">
+            
+        <span class="font-neo-sans text-sm leading-none text-center align-middle text-[#1C1C28]">{{ languageService.currentLang() === 'ar' ? item.valueAr : item.valueEn }}</span>
         </div>
-        <div class="flex flex-col items-center text-center">
-            <div class="text-gray-500">{{ 'LAST_RECHARGE_DATE' | translate }}</div>
-            <div>2024/12/29</div>
-        </div>
-        <div class="flex flex-col items-center text-center">
-            <div class="text-gray-500">{{ 'COUNTRY' | translate }}</div>
-            <div class="flex items-center gap-1">
-                <img src="https://flagcdn.com/w40/jo.png" alt="flag" class="w-5 h-4 rounded-sm" />
-                <span>المملكة الأردنية الهاشمية</span>
-            </div>
-        </div>
-        <div class="flex flex-col items-center text-center">
-            <div class="text-gray-500">{{ 'CURRENT_BALANCE' | translate }}</div>
-            <div>5000 ج.م</div>
-        </div>
-        <div class="flex flex-col items-center text-center">
-            <div class="text-gray-500">{{ 'USED_BALANCE_CURRENT_CUSTOMER' | translate }}</div>
-            <div>5000 ج.م</div>
-        </div>
-        <div  class="flex flex-col items-center text-center">
-            <div class="text-gray-500">{{ 'USED_BALANCE_TOTAL' | translate }}</div>
-            <div>5000 ج.م</div>
-        </div>
-        <div class="flex flex-col items-center text-center">
-            <div class="text-gray-500">{{ 'CURRENT_CUSTOMER' | translate }}</div>
-            <div class="truncate">الشركة الألمانية للإبادة...</div>
-        </div>
-        <div class="flex flex-col items-center text-center">
-            <div class="text-gray-500">{{ 'EXTENSIONS_COUNT' | translate }}</div>
-            <div>09</div>
-        </div>
+      </ng-template>
     </div>
+  </ng-container>
 </div>
+

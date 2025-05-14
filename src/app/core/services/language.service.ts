@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
@@ -6,15 +6,16 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LanguageService {
 
-  private currentLang = 'ar';
+   currentLang = signal<'en' | 'ar'>('ar');
+
 
   constructor(private translate: TranslateService) {
-    this.translate.setDefaultLang(this.currentLang);
+    this.translate.setDefaultLang(this.currentLang());
   }
 
   toggleLanguage() {
-    this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
-    this.translate.use(this.currentLang);
-    document.documentElement.dir = this.currentLang === 'ar' ? 'rtl' : 'ltr';
+    this.currentLang.set( this.currentLang() === 'en' ? 'ar' : 'en');
+    this.translate.use(this.currentLang());
+    document.documentElement.dir = this.currentLang() === 'ar' ? 'rtl' : 'ltr';
   }
 }

@@ -1,7 +1,8 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { Component, HostListener, Inject } from '@angular/core';
+import { Component, HostListener, Inject, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { DirectionService } from '../../core/services/direction.service';
+import { LanguageService } from '../../core/services/language.service';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +11,11 @@ import { DirectionService } from '../../core/services/direction.service';
 })
 export class HeaderComponent {
   isOpen = false;
+  @Input() items: any[] = [];
+  @Input() phone: string = '';
 
   constructor(public directionService: DirectionService,
+              public languageService: LanguageService,
               @Inject(DOCUMENT) private document: Document
   ) {
     this.directionService.currentDirection();
