@@ -197,6 +197,3 @@ constructor(public directionService: DirectionService,
     }
     
 }
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
-}
