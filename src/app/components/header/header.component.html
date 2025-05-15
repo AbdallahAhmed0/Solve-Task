@@ -77,7 +77,7 @@
       <!-- Country case with flag -->
     <div *ngIf="item.flag; else normalValue" class="flex items-center text-start text-[10px] md:text-[13px] gap-0 md:gap-1">
       <img [src]="item.flag" alt="flag" class="w-5 h-4 rounded-sm" />
-      <span class="max-w-[150px]">{{ languageService.currentLang() === 'ar' ? item.valueAr : item.valueEn }}</span>
+      <span class="truncate w-full">{{ languageService.currentLang() === 'ar' ? item.valueAr : item.valueEn }}</span>
     </div>
 
       <!-- Normal value or truncated -->

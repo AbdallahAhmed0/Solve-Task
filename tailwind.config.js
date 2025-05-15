@@ -11,7 +11,10 @@ module.exports = {
      
     },
   },
-      plugins: [require('tailwindcss-rtl')],
+      plugins: [
+        require('tailwindcss-rtl'),
+        require('@tailwindcss/line-clamp')
+      ],
 
   corePlugins: {
     textAlign: false, // Disable default textAlign utilities
