@@ -1,50 +1,46 @@
 <div dir="rtl" class="p-3 m-3 bg-white rounded-[6px] shadow border border-[#ECF0F5]" [dir]="directionService.currentDirection()">
-<div class="overflow-x-auto">
-    <table class="min-w-full text-sm" [ngClass]="{'text-right': languageService.currentLang() === 'ar', 'text-left': languageService.currentLang() === 'en'}">
-      
-      <thead class="bg-[#F4F5F7] text-[#6B7280] h-[40px] rounded-[6px]"data-aos="fade-right"
-     data-aos-offset="250"
-     data-aos-easing="ease-in-sine">
-        <tr>
-          <th 
-          *ngFor="let header of headers"
-          class="px-4 font-neo-sans text-[10px] md:text-[13px]">
-      {{ languageService.currentLang() === 'ar' ? header.labelAr : header.labelEn }}
-    </th>
+<div class="overflow-x-auto md:overflow-x-hidden h-[338] overflow-y-auto">
+  <table class="min-w-full text-sm m-3" [ngClass]="{'text-right': languageService.currentLang() === 'ar', 'text-left': languageService.currentLang() === 'en'}">
+    
+    <thead class="bg-[#F4F5F7] text-[#6B7280] h-[40px] rounded-[6px]" data-aos="fade-right"
+   data-aos-offset="250"
+   data-aos-easing="ease-in-sine">
+    <tr>
+      <th 
+      *ngFor="let header of headers"
+      class="px-4 font-neo-sans text-[10px] md:text-[13px]">
+    {{ languageService.currentLang() === 'ar' ? header.labelAr : header.labelEn }}
+  </th>
   </tr>
-  
 </thead>
 
-
 <tbody data-aos="fade-down"
-     data-aos-offset="250"
-     data-aos-easing="ease-in-sine">
-  <ng-container *ngFor="let record of paginatedData" >
-    <!-- Spacer row -->
-    <tr><td class="h-2 p-0" [attr.colspan]="headers.length"></td></tr>
+   data-aos-offset="250"
+   data-aos-easing="ease-in-sine">
+  <ng-container *ngFor="let record of paginatedData | slice:0:4">
+  <!-- Spacer row -->
+  <tr><td class="h-2 p-0" [attr.colspan]="headers.length"></td></tr>
 
-    <tr
-      class="h-[50px] rounded-[6px] border border-[#0000001A] bg-white font-neo-sans text-[9px] md:text-[14px] text-[#1C1C28] hover:bg-gray-50"
+  <tr
+    class="h-[50px] rounded-[6px] border border-[#0000001A] bg-white font-neo-sans text-[9px] md:text-[14px] text-[#1C1C28] hover:bg-gray-50"
+  >
+    <td
+    *ngFor="let header of headers"
+    class="px-4 py-2"
+    [ngClass]="{ 'truncate max-w-[180px]': header.field === 'customer' }"
     >
-      <td
-        *ngFor="let header of headers"
-        class="px-4 py-2"
-        [ngClass]="{ 'truncate max-w-[180px]': header.field === 'customer' }"
-      >
-      <img *ngIf="header.field === 'customer'" src="assets/images/company.jpg" class="inline-block w-5 h-5 mr-2" alt="customer">
+    <img *ngIf="header.field === 'customer'" src="assets/images/company.jpg" class="inline-block w-5 h-5 mr-2" alt="customer">
 
-        {{ record[header.field]?.[languageService.currentLang()] || '-' }}
-      </td>
-    </tr>
-
+    {{ record[header.field]?.[languageService.currentLang()] || '-' }}
+    </td>
+  </tr>
   </ng-container>
 </tbody>
-
-    </table>
-  </div>
+  </table>
+</div>
 
   <!-- Pagination -->
-  <div class="flex flex-col md:flex-row items-center justify-between mt-4 text-sm text-gray-600">
+  <div class="flex flex-col md:h-[30px] m-3 md:flex-row items-center justify-between text-sm text-gray-600">
     <div class="mb-2 md:mb-0">
       {{'SHOW' | translate}}:
       <select class="border rounded px-2 py-1 text-sm mx-1" (change)="changePageSize($event)">
@@ -73,6 +69,5 @@
     &gt;
   </button>
 </div>
-
-  </div>
+</div>
 </div>

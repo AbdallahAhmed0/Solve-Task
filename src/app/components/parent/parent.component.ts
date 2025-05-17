@@ -27,9 +27,9 @@ infoItems:InfoItem[] = [
   { label: 'LAST_RECHARGE_DATE', valueAr: '2024/12/29', valueEn: '2024/12/29' },
   {
     label: 'COUNTRY',
-    valueAr: 'المملكة الأردنية الهاشمية',
-    valueEn: 'Hashemite Kingdom of Jordan',
-    flag: 'https://flagcdn.com/w40/jo.png',
+    valueAr: 'المملكة العربية السعودية',  
+    valueEn: 'Kingdom of Saudi Arabia',
+    flag: 'https://flagcdn.com/w40/sa.png',  // Changed to Saudi Arabia flag
   },
   { label: 'CURRENT_BALANCE', valueAr: '5000 ج.م', valueEn: '5000 EGP' },
   { label: 'USED_BALANCE_CURRENT_CUSTOMER', valueAr: '5000 ج.م', valueEn: '5000 EGP' },
