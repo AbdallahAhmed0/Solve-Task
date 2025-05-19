@@ -44,10 +44,12 @@
   <div class="flex flex-col md:h-[30px] m-3 md:flex-row items-center justify-between text-sm text-gray-600">
     <div class="mb-2 md:mb-0 flex items-center gap-2">
       <span class="font-neo-sans text-[11px] font-medium text-[#333333] leading-none">{{'SHOW' | translate}}</span>
-      <select class="w-[42px] h-[30px] rounded-[2px] border border-[#EFEFEF] font-poppins text-[10px] font-medium text-[#333333] leading-none" dir="ltr">
-      <option [selected]="pageSize === 10">10</option>
-      <option [selected]="pageSize === 25">25</option>
-      <option [selected]="pageSize === 50">50</option>
+      <select (change)="changePageSize($event)"
+        class="w-[42px] h-[30px] rounded-[2px] border border-[#EFEFEF] font-poppins text-[10px] font-medium text-[#333333] leading-none" 
+        dir="ltr">
+        <option [value]="10">10</option>
+        <option [value]="25">25</option>
+        <option [value]="50">50</option>
       </select>
       <span class="font-neo-sans text-[11px] font-medium text-[#333333] leading-none">{{"TOTAL" | translate}} <span class="font-poppins text-[10px]">{{ tableData.length }}</span></span>
     </div>
