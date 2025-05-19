@@ -1,21 +1,33 @@
-<div class="w-full bg-white rounded-t-lg shadow-sm" [dir]="directionService.currentDirection()">
+<div class="w-full h-[42px] bg-white rounded-t-[8px] border-b border-[#E4E4E4] border-b-[1px]" [dir]="directionService.currentDirection()">
     <!-- Header Section -->
-    <div class="h-[42px] flex justify-between rounded-t-[8px] py-[9px] px-[16px] border-b border-[#E4E4E4]">
-        <div class="h-[24px] flex items-center">
-                        <div class="w-[22px] h-[22px] rounded-[4px] bg-[rgba(62,151,255,0.1)] relative ">
+    <div class="flex justify-between h-[24px] py-[9px] px-[16px] gap-[8px]">
+        <div class="h-[22px] flex items-center gap-[8px]">
+                        <div class="w-[22px] h-[22px] rounded-[4px] bg-[#3E97FF1A] relative ">
                 <span class="absolute flex items-center justify-center inset-0 text-[#3E97FF]">#</span>
             </div>
 
-            <p class="h-[21px] mx-[8px] font-neo-sans font-[500] text-[14px] leading-[150%] tracking-[0%] text-right text-[#1C1C28]">{{ 'SHOW_NUMBER' | translate }}</p>
+            <p class="h-[21px] font-neo-sans font-[500] text-[14px] leading-[150%] tracking-[0%] text-right text-[#1C1C28]">{{ 'SHOW_NUMBER' | translate }}</p>
              <button cursor-pointer
-                (click)="toggleDirection()" class="px-2 py-1 mr-2 bg-[#3E97FF] hover:bg-[#3178c6] text-white rounded-md text-sm cursor-pointer">
+                (click)="toggleDirection()" class="px-2 py-1 mr-2 bg-[#3E97FF] hover:bg-[#3178c6] text-white font-[600] rounded-md text-sm cursor-pointer">
                 {{ directionService.currentDirection() === 'rtl' ? 'En' : 'Ar' }}
             </button>
         </div>
         <div class="w-[20px] h-[20px] rounded-[5.47px] bg-[#F4F4F4] relative">
-            <button class="absolute inset-0 flex items-center justify-center cursor-pointer">
-                <span class="text-[#1C1C28] hover:text-[#FF4B55] text-lg">×</span>
-            </button>
+        <button class="absolute inset-0 flex items-center justify-center cursor-pointer group">
+        <svg
+            width="8"
+            height="8"
+            viewBox="0 0 8 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="text-[#1C1C28] group-hover:text-[#FF4B55] transition-colors duration-200"
+        >
+            <path
+            fill="currentColor"
+            d="M2.99096 3.99774L0.799236 1.80678C0.522887 1.53053 0.522887 1.07328 0.799236 0.797033C1.07558 0.520781 1.53299 0.520781 1.80934 0.797033L4.00107 2.988L6.19279 0.797033C6.46914 0.520781 6.92655 0.520781 7.20289 0.797033C7.47924 1.07328 7.47924 1.53053 7.20289 1.80678L5.01117 3.99774L7.20289 6.18871C7.47924 6.46496 7.47924 6.9222 7.20289 7.19845C7.05996 7.34134 6.8789 7.40803 6.69784 7.40803C6.51679 7.40803 6.33573 7.34134 6.19279 7.19845L4.00107 5.00749L1.80934 7.19845C1.6664 7.34134 1.48534 7.40803 1.30429 7.40803C1.12323 7.40803 0.942174 7.34134 0.799236 7.19845C0.522887 6.9222 0.522887 6.46496 0.799236 6.18871L2.99096 3.99774Z"
+            />
+        </svg>
+        </button>
         </div>
     </div>
 </div>
