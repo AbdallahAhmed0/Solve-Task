@@ -1,14 +1,14 @@
-<div dir="rtl" class="p-3 m-3 bg-white rounded-[6px] shadow border border-[#ECF0F5]" [dir]="directionService.currentDirection()">
+<div dir="rtl" class="m-3 p-3 bg-white rounded-[6px] shadow border border-[#ECF0F5]" [dir]="directionService.currentDirection()">
 <div class="overflow-x-auto md:overflow-x-hidden h-[338] overflow-y-auto">
-  <table class="min-w-full text-sm m-3" [ngClass]="{'text-right': languageService.currentLang() === 'ar', 'text-left': languageService.currentLang() === 'en'}">
+  <table class="min-w-full text-sm" [ngClass]="{'text-right': languageService.currentLang() === 'ar', 'text-left': languageService.currentLang() === 'en'}">
     
-    <thead class="bg-[#F4F5F7] text-[#6B7280] px-2 h-[40px] rounded-[6px]" data-aos="fade-right"
+    <thead class="bg-[#F4F5F7] text-[#6B7280] p-3 h-[40px] rounded-[6px]" data-aos="fade-right"
    data-aos-offset="250"
    data-aos-easing="ease-in-sine">
     <tr>
       <th 
       *ngFor="let header of headers"
-      class="px-4 font-neo-sans text-[10px] md:text-[13px]">
+      class="p-3 font-neo-sans font-normal text-[10px] md:text-[13px] leading-none text-right align-middle">
     {{ languageService.currentLang() === 'ar' ? header.labelAr : header.labelEn }}
   </th>
   </tr>
@@ -22,14 +22,15 @@
   <tr><td class="h-2 p-0" [attr.colspan]="headers.length"></td></tr>
 
   <tr
-    class="h-[50px] rounded-[6px] border border-[#0000001A] bg-white font-neo-sans text-[9px] md:text-[14px] text-[#1C1C28] hover:bg-gray-50"
+    class="h-[50px] rounded-[6px] border border-[#0000001A] bg-white font-neo-sans text-[10px] md:text-[14px] text-[#1C1C28] hover:bg-gray-50 font-normal leading-none text-right align-middle"
   >
     <td
     *ngFor="let header of headers"
     class="px-4 py-2"
     [ngClass]="{ 'truncate max-w-[180px]': header.field === 'customer' }"
     >
-    <img *ngIf="header.field === 'customer'" src="assets/images/company.jpg" class="inline-block w-5 h-5 mr-2" alt="customer">
+    
+    <img *ngIf="header.field === 'customer'" src="assets/images/company.jpg" class="inline-block w-[26px] h-[26px] mr-2 rounded-[40px] border-[0.33px] border-[#0000001A] bg-[#F7F7F7]" alt="customer">
 
     {{ record[header.field]?.[languageService.currentLang()] || '-' }}
     </td>
@@ -41,31 +42,35 @@
 
   <!-- Pagination -->
   <div class="flex flex-col md:h-[30px] m-3 md:flex-row items-center justify-between text-sm text-gray-600">
-    <div class="mb-2 md:mb-0">
-      {{'SHOW' | translate}}:
-      <select class="border rounded px-2 py-1 text-sm mx-1" (change)="changePageSize($event)">
-        <option [selected]="pageSize === 10">10</option>
-        <option [selected]="pageSize === 25">25</option>
-        <option [selected]="pageSize === 50">50</option>
+    <div class="mb-2 md:mb-0 flex items-center gap-2">
+      <span class="font-neo-sans text-[11px] font-medium text-[#333333] leading-none">{{'SHOW' | translate}}</span>
+      <select class="w-[42px] h-[30px] rounded-[2px] border border-[#EFEFEF] font-poppins text-[10px] font-medium text-[#333333] leading-none" dir="ltr">
+      <option [selected]="pageSize === 10">10</option>
+      <option [selected]="pageSize === 25">25</option>
+      <option [selected]="pageSize === 50">50</option>
       </select>
-       {{"TOTAL" | translate}} <span class="font-semibold">{{ tableData.length }}</span>
+      <span class="font-neo-sans text-[10px] font-medium text-[#333333] leading-none">{{"TOTAL" | translate}} <span class="font-poppins">{{ tableData.length }}</span></span>
     </div>
 
 <div class="flex items-center space-x-1" dir="ltr">
-  <button class="px-3 py-1 rounded hover:bg-gray-100" [disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">
+  <button class="px-3 py-1 h-[27px] w-[27px] rounded hover:bg-gray-100 font-poppins text-[14px] text-[#7E8299] leading-none" [disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">
     &lt;
   </button>
   <button
     *ngFor="let page of pages"
     (click)="changePage(page)"
-    class="px-3 py-1 rounded"
-    [class.bg-blue-500]="currentPage === page"
+    class="rounded font-poppins text-[14px] leading-none h-[27px] w-[27px]"
+    [class.bg-[#3E97FF]]="currentPage === page"
     [class.text-white]="currentPage === page"
+    [class.font-medium]="currentPage === page"
+    [class.rounded-[4px]]="currentPage === page"
     [class.hover:bg-gray-100]="currentPage !== page"
+    [class.text-[#7E8299]]="currentPage !== page"
+    [class.font-normal]="currentPage !== page"
   >
     {{ page }}
   </button>
-  <button class="px-3 py-1 rounded hover:bg-gray-100" [disabled]="currentPage === totalPages" (click)="changePage(currentPage + 1)">
+  <button class="px-3 py-1 rounded hover:bg-gray-100 font-poppins text-[14px] text-[#7E8299] leading-none" [disabled]="currentPage === totalPages" (click)="changePage(currentPage + 1)">
     &gt;
   </button>
 </div>
