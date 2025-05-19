@@ -65,61 +65,58 @@
 </div>
     </div>
 <div
-  class="flex flex-col  gap-y-[16px]"
+  class="flex flex-col gap-y-[16px]"
   data-aos="fade-down"
   data-aos-offset="250"
   data-aos-easing="ease-in-sine"
 >
   <!-- Loop through each row -->
   <ng-container *ngFor="let row of items">
-    <div class="flex flex-wrap items-center justify-between">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
       <!-- Loop through items in the row -->
-      <ng-container *ngFor="let item of row; let isLast = last">
+      <ng-container *ngFor="let item of row; let i = index; let isLast = last">
+      <!-- Container for item and separator -->
+      <div class="flex items-center">
         <!-- Single item -->
-        <div class="flex flex-col items-center text-center w-[172px]">
-          <!-- Label -->
-          <div class="text-[#6B7280] font-neo-sans text-[10px] md:text-[14px] leading-none mb-1">
-            {{ item.label | translate }}
-          </div>
-
-          <!-- Flag + Value -->
-          <div *ngIf="item.flag; else normalValue" class="flex items-center gap-1">
-            <img
-              [src]="item.flag"
-              alt="flag"
-              class="w-[21px] h-[21px] rounded-[32.31px] border-[0.26px] border-[#0000001A] bg-[#F7F7F7] object-cover"
-            />
-            <span
-              class="text-[#1C1C28] text-[10px] md:text-[14px]"
-              [ngClass]="{ 'truncate': item.truncate }"
-            >
-              {{ languageService.currentLang() === 'ar' ? item.valueAr : item.valueEn }}
-            </span>
-          </div>
-
-          <!-- Value without flag -->
-          <ng-template #normalValue>
-            <span
-              class="text-[#1C1C28] text-[10px] md:text-[14px]"
-              [ngClass]="{ 'truncate': item.truncate }"
-            >
-              {{ languageService.currentLang() === 'ar' ? item.valueAr : item.valueEn }}
-            </span>
-          </ng-template>
+        <div class="flex flex-col items-center text-center flex-grow">
+        <!-- Label -->
+        <div class="text-[#6B7280] font-neo-sans text-[10px] md:text-[14px] leading-none mb-1">
+          {{ item.label | translate }}
         </div>
 
-        <!-- Vertical separator -->
-        <svg
-          *ngIf="!isLast"
-          width="2"
-          height="28"
-          viewBox="0 0 2 28"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="mx-2"
-        >
-          <line x1="1" y1="0" x2="1" y2="28" stroke="#DFDFDF" />
+        <!-- Flag + Value -->
+        <div *ngIf="item.flag; else normalValue" class="flex items-center gap-1">
+          <img
+          [src]="item.flag"
+          alt="flag"
+          class="w-[21px] h-[21px] rounded-[32.31px] border-[0.26px] border-[#0000001A] bg-[#F7F7F7] object-cover"
+          />
+          <span
+          class="text-[#1C1C28] text-[10px] md:text-[14px]"
+          [ngClass]="{ 'truncate': item.truncate }"
+          >
+          {{ languageService.currentLang() === 'ar' ? item.valueAr : item.valueEn }}
+          </span>
+        </div>
+
+        <!-- Value without flag -->
+        <ng-template #normalValue>
+          <span
+          class="text-[#1C1C28] text-[10px] md:text-[14px]"
+          [ngClass]="{ 'truncate': item.truncate }"
+          >
+          {{ languageService.currentLang() === 'ar' ? item.valueAr : item.valueEn }}
+          </span>
+        </ng-template>
+        </div>
+
+        <!-- Separator line - only show if not last item -->
+        <div *ngIf="!isLast" class="flex items-center">
+        <svg width="2" height="28" viewBox="0 0 2 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0.833313" y1="2.18557e-08" x2="0.833312" y2="28" stroke="#DFDFDF"/>
         </svg>
+        </div>
+      </div>
       </ng-container>
     </div>
   </ng-container>
