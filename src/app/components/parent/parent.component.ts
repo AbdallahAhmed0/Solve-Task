@@ -22,26 +22,32 @@ import { InfoItem } from '../../core/models/items-header.model';
 export class ParentComponent {
 phoneNumber:string = '012345678910';
 // send data to header component
-infoItems:InfoItem[] = [
-  { label: 'PROTOCOL_NAME', valueAr: 'فودافون مصر', valueEn: 'Vodafone Egypt' },
-  { label: 'LAST_RECHARGE_DATE', valueAr: '2024/12/29', valueEn: '2024/12/29' },
-  {
-    label: 'COUNTRY',
-    valueAr: 'المملكة العربية السعودية',  
-    valueEn: 'Kingdom of Saudi Arabia',
-    flag: 'https://flagcdn.com/w40/sa.png',  // Changed to Saudi Arabia flag
-  },
-  { label: 'CURRENT_BALANCE', valueAr: '5000 ج.م', valueEn: '5000 EGP' },
-  { label: 'USED_BALANCE_CURRENT_CUSTOMER', valueAr: '5000 ج.م', valueEn: '5000 EGP' },
-  { label: 'USED_BALANCE_TOTAL', valueAr: '5000 ج.م', valueEn: '5000 EGP' },
-  {
-    label: 'CURRENT_CUSTOMER',
-    valueAr: 'الشركة الألمانية للإبادة...',
-    valueEn: 'German Pest Control Co...',
-    flag:'assets/images/company.jpg',
-    truncate: true,
-  },
-  { label: 'EXTENSIONS_COUNT', valueAr: '09', valueEn: '09' }
+infoItems: InfoItem[][] = [
+  // First group of 4 items
+  [
+    { label: 'PROTOCOL_NAME', valueAr: 'فودافون مصر', valueEn: 'Vodafone Egypt' },
+    { label: 'LAST_RECHARGE_DATE', valueAr: '2024/12/29', valueEn: '2024/12/29' },
+    {
+      label: 'COUNTRY',
+      valueAr: 'المملكة العربية السعودية',  
+      valueEn: 'Kingdom of Saudi Arabia',
+      flag: 'https://flagcdn.com/w40/sa.png',
+    },
+    { label: 'CURRENT_BALANCE', valueAr: '5000 ج.م', valueEn: '5000 EGP' },
+  ],
+  // Second group of 4 items
+  [
+    { label: 'USED_BALANCE_CURRENT_CUSTOMER', valueAr: '5000 ج.م', valueEn: '5000 EGP' },
+    { label: 'USED_BALANCE_TOTAL', valueAr: '5000 ج.م', valueEn: '5000 EGP' },
+    {
+      label: 'CURRENT_CUSTOMER',
+      valueAr: 'الشركة الألمانية للإبادة...',
+      valueEn: 'German Pest Control Co...',
+      flag: 'assets/images/company.jpg',
+      truncate: true,
+    },
+    { label: 'EXTENSIONS_COUNT', valueAr: '09', valueEn: '09' }
+  ]
 ];
 
 // send data to table component

@@ -12,7 +12,7 @@ import { InfoItem } from '../../core/models/items-header.model';
 })
 export class HeaderComponent {
   isOpen = false;
-  @Input() items: InfoItem[] = [];
+  @Input() items: InfoItem[][] = [];
   @Input() phone: string = '';
 
   constructor(public directionService: DirectionService,
