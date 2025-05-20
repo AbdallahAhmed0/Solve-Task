@@ -107,6 +107,9 @@
             [style.fontFamily]="item.label =='PROTOCOL_NAME' ? 'Neo Sans Arabic, sans-serif' : 'Poppins, sans-serif'"
           >
           {{ languageService.currentLang() === 'ar' ? item.valueAr : item.valueEn }}
+          <span *ngIf="item.currencyAr" style="font-family: 'Neo Sans Arabic', sans-serif;">
+            {{ languageService.currentLang() === 'ar' ? item.currencyAr : item.currencyEn }}
+          </span>
           </span>
         </ng-template>
         </div>
