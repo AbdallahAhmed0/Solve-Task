@@ -4,4 +4,7 @@ export interface InfoItem {
   valueEn: string;
   flag?: string;
   truncate?: boolean;
+  currencyAr?: string;
+  currencyEn?: string;
+  
 }

@@ -11,4 +11,5 @@ export interface TableRecord {
   localMinutes: TableRecordField;
   intlMinutes: TableRecordField;
   amount: TableRecordField;
+  currency: TableRecordField;
 }
