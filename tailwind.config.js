@@ -1,21 +1,15 @@
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+export default {
   content: ["./src/**/*.{html,ts}"],
   darkMode: 'class', // or 'media'
   theme: {
     extend: {
-      fontFamily: {
-        'neo-sans': ['Neo Sans Arabic', 'sans-serif'],
-        'poppins': ['Poppins', 'sans-serif']
-
-      },
-     
     },
   },
-      plugins: [
-        require('tailwindcss-rtl'),
-        require('@tailwindcss/line-clamp')
-      ],
-
+  plugins: [
+    import('tailwindcss-rtl'),
+    import('@tailwindcss/line-clamp')
+  ],
   corePlugins: {
     textAlign: false, // Disable default textAlign utilities
   },

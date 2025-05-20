@@ -6,7 +6,7 @@
                 <span class="absolute flex items-center justify-center inset-0 text-[#3E97FF]">#</span>
             </div>
 
-            <p class="h-[21px] font-neo-sans font-[500] text-[14px] leading-[150%] tracking-[0%] text-right text-[#1C1C28]">{{ 'SHOW_NUMBER' | translate }}</p>
+            <p class="h-[21px]  font-medium text-[14px] leading-[150%] tracking-[0%] text-right text-[#1C1C28]" style="font-family: 'Neo Sans Arabic', sans-serif;">{{ 'SHOW_NUMBER' | translate }}</p>
              <button cursor-pointer
                 (click)="toggleDirection()" class="px-2 py-1 mr-2 bg-[#3E97FF] hover:bg-[#3178c6] text-white font-[600] rounded-md text-sm cursor-pointer">
                 {{ directionService.currentDirection() === 'rtl' ? 'En' : 'Ar' }}

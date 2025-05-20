@@ -8,7 +8,7 @@
     <tr>
       <th 
       *ngFor="let header of headers"
-      class="p-3 font-neo-sans font-normal text-[10px] md:text-[13px] leading-none text-right align-middle">
+      class="p-3 font-normal text-[10px] md:text-[13px] leading-none text-right align-middle" style="font-family: 'Neo Sans Arabic', sans-serif;">
     {{ languageService.currentLang() === 'ar' ? header.labelAr : header.labelEn }}
   </th>
   </tr>
@@ -22,12 +22,12 @@
   <tr><td class="h-2 p-0" [attr.colspan]="headers.length"></td></tr>
 
   <tr
-    class="h-[50px] rounded-[6px] border border-[#0000001A] bg-white font-neo-sans text-[10px] md:text-[14px] text-[#1C1C28] hover:bg-gray-50 font-normal leading-none text-right align-middle"
-  >
+    class="h-[50px] rounded-[6px] border border-[#0000001A] bg-white text-[10px] md:text-[14px] text-[#1C1C28] hover:bg-gray-50 font-normal leading-none text-right align-middle">
     <td
     *ngFor="let header of headers"
     class="px-4 py-2"
     [ngClass]="{ 'truncate max-w-[180px]': header.field === 'customer' }"
+    [ngStyle]="{'fontFamily': header.field === 'customer' || header.field === 'responsible' ? 'Neo Sans Arabic, sans-serif' : 'Poppins, sans-serif' }"
     >
     
     <img *ngIf="header.field === 'customer'" src="assets/images/company.jpg" class="inline-block w-[26px] h-[26px] mr-2 rounded-[40px] border-[0.33px] border-[#0000001A] bg-[#F7F7F7]" alt="customer">
@@ -43,20 +43,21 @@
   <!-- Pagination -->
   <div class="flex flex-col md:h-[30px] m-3 md:flex-row items-center justify-between text-sm text-gray-600">
     <div class="mb-2 md:mb-0 flex items-center gap-2">
-      <span class="font-neo-sans text-[11px] font-medium text-[#333333] leading-none">{{'SHOW' | translate}}</span>
+      <span class="text-[11px] font-medium text-[#333333] leading-none" style="font-family: 'Neo Sans Arabic', sans-serif;">{{'SHOW' | translate}}</span>
       <select (change)="changePageSize($event)"
-        class="w-[42px] h-[30px] rounded-[2px] border border-[#EFEFEF] font-poppins text-[10px] font-medium text-[#333333] leading-none" 
-        dir="ltr">
+        class="w-[42px] h-[30px] rounded-[2px] border border-[#EFEFEF] text-[10px] font-medium text-[#333333] leading-none" 
+        style="font-family: 'Poppins', sans-serif;" dir="ltr">
         <option [value]="10">10</option>
         <option [value]="25">25</option>
         <option [value]="50">50</option>
       </select>
-      <span class="font-neo-sans text-[11px] font-medium text-[#333333] leading-none">{{"TOTAL" | translate}} <span class="font-poppins text-[10px]">{{ tableData.length }}</span></span>
+      <span class="text-[11px] font-medium text-[#333333] leading-none" style="font-family: 'Neo Sans Arabic', sans-serif;">{{"TOTAL" | translate}} <span class="text-[10px]"style="font-family: 'Poppins', sans-serif;">{{ tableData.length }}</span></span>
     </div>
 
 <div class="flex items-center space-x-1" dir="ltr">
   <button 
-    class="px-3 py-1 h-[27px] w-[27px] rounded hover:bg-gray-100 font-poppins text-[14px] text-[#7E8299] leading-none" 
+    class="px-3 py-1 h-[27px] w-[27px] rounded hover:bg-gray-100 text-[14px] text-[#7E8299] leading-none" 
+    style="font-family: 'Poppins', sans-serif;"
     [disabled]="currentPage === 1"
     [class.opacity-50]="currentPage === 1"
     (click)="changePage(currentPage - 1)">
@@ -65,7 +66,8 @@
   <button
     *ngFor="let page of pages"
     (click)="changePage(page)"
-    class="rounded font-poppins text-[14px] leading-none h-[27px] w-[27px]"
+    class="rounded text-[14px] leading-none h-[27px] w-[27px]"
+    style="font-family: 'Poppins', sans-serif;"
     [class.bg-[#3E97FF]]="currentPage === page"
     [class.text-white]="currentPage === page"
     [class.font-medium]="currentPage === page"
@@ -77,7 +79,8 @@
     {{ page }}
   </button>
   <button 
-    class="px-3 py-1 rounded hover:bg-gray-100 font-poppins text-[14px] text-[#7E8299] leading-none" 
+    class="px-3 py-1 rounded hover:bg-gray-100  text-[14px] text-[#7E8299] leading-none" 
+    style="font-family: 'Poppins', sans-serif;"
     [disabled]="currentPage === totalPages"
     [class.opacity-50]="currentPage === totalPages"
     (click)="changePage(currentPage + 1)">
