@@ -8,7 +8,7 @@
     <tr>
       <th 
       *ngFor="let header of headers"
-      class="p-3 font-normal text-[10px] md:text-[13px] leading-none text-right align-middle" style="font-family: 'Neo Sans Arabic', sans-serif;">
+      class="p-3 font-normal text-[10px] md:text-[13px] leading-none  align-middle" style="font-family: 'Neo Sans Arabic', sans-serif;">
     {{ languageService.currentLang() === 'ar' ? header.labelAr : header.labelEn }}
   </th>
   </tr>
